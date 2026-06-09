@@ -38,12 +38,12 @@ export const useAuth = () => {
 
             const formData = new FormData();
 
-            formData.append("name", data.name);
-            formData.append("surname", data.surname);
-            formData.append("username", data.username);
+            formData.append("name", data.nombre || data.name);
+            formData.append("surname", data.apellido || data.surname);
+            formData.append("username", data.usuario || data.username);
             formData.append("email", data.email);
             formData.append("password", data.password);
-            formData.append("phone", data.phone);
+            formData.append("phone", data.telefono || data.phone);
 
             const response = await authClient.post(
                 "/register",

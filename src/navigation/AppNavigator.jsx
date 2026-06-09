@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { View, ActivityIndicator, StyleSheet } from "react-native";
-import { COLORS } from "../shared/constans/theme";
+import { COLORS } from "../shared/constants/theme";
 import AuthStackNavigator from "./AuthStack";
 
 const AppNavigator = () => {

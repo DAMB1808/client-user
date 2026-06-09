@@ -11,7 +11,7 @@ import {
 } from "react-native"
 
 import { useForm, Controller } from "react-hook-form"
-import { COLORS, SPACING, FONT_SIZE } from "../../../shared/constans/theme"
+import { COLORS, SPACING, FONT_SIZE } from "../../../shared/constants/theme"
 import Input from "../../../shared/components/Input"
 import Button from "../../../shared/components/Button"
 import { useAuth } from "../hooks/useAuth"
@@ -33,7 +33,7 @@ const LoginScreen = ({ navigation }) => {
         try {
             await handleLogin(data)
         } catch (error) {
-            error.response?.data?.message || "Error al iniciar sesión"
+            const message = error.response?.data?.message || "Error al iniciar sesión"
             Alert.alert("Error", message)
         }
     }

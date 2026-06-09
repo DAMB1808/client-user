@@ -1,6 +1,6 @@
 
 import { TextInput, View, Text, StyleSheet } from 'react-native';
-import { COLORS, SPACING, FONT_SIZE } from '../constans/theme';
+import { COLORS, SPACING, FONT_SIZE } from '../constants/theme';
 
 const Input = ({ label, error, ...props}) => {
     return (

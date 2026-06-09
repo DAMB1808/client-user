@@ -1,10 +1,10 @@
 
-import {View, Text, StyleSheet} from 'react-native';
-import { COLORS, SPACING, FONT_SIZE } from '../constans/theme';
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { COLORS, SPACING, FONT_SIZE } from '../constants/theme';
 
 export const LoadingSpinner = () => ( 
-    <View style={StyleSheet.center}>
-        <ActivityIndicador size="large" color={COLORS.primary} />
+    <View style={styles.center}>
+        <ActivityIndicator size="large" color={COLORS.primary} />
     </View>
 );
 

@@ -5,7 +5,7 @@ import {
     StyleSheet,
     ActivityIndicator,
 } from 'react-native';
-import { COLORS, SPACING, FONT_SIZE } from '../constans/theme';
+import { COLORS, SPACING, FONT_SIZE } from '../constants/theme';
 
 const Button = ({
     title, 

@@ -10,7 +10,7 @@ import {
 } from "react-native"
 
 import { useForm, Controller } from "react-hook-form"
-import { COLORS, SPACING, FONT_SIZE } from "../../../shared/constans/theme"
+import { COLORS, SPACING, FONT_SIZE } from "../../../shared/constants/theme"
 import Input from "../../../shared/components/Input"
 import Button from "../../../shared/components/Button"
 import { useAuth } from "../hooks/useAuth"
@@ -37,8 +37,8 @@ const RegisterScreen = ({ navigation }) => {
             await handleRegister(data)
 
             Alert.alert(
-                "Registero exitoso",
-                "Tu cuenta ha sido creada. Ahora puedes iniciar sesion"
+                "Registro exitoso",
+                "Tu cuenta ha sido creada. Ahora puedes iniciar sesión",
                 [{ text: "OK", onPress: () => navigation.navigate("Login") }]
             )
         } catch (error) {
