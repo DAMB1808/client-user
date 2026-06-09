@@ -5,7 +5,7 @@ import RegisterScreen from "../features/auth/screens/RegisterScreen";
 
 const Stack = createNativeStackNavigator();
 
-const AuthStackNavigator = () => {
+const AuthStack = () => {
     return (
         <Stack.Navigator
             screenOptions={{
@@ -18,4 +18,4 @@ const AuthStackNavigator = () => {
     );
 };
 
-export default AuthStackNavigator;
+export default AuthStack;
