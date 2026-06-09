@@ -13,10 +13,13 @@ import { useForm, Controller } from "react-hook-form"
 import { COLORS, SPACING, FONT_SIZE } from "../../../shared/constans/theme"
 import Input from "../../../shared/components/Input"
 import Button from "../../../shared/components/Button"
+import { useAuth } from "../hooks/useAuth"
 
 import kinalSportsLogo from "../../../../assets/kinal_sports.png"
 
 const RegisterScreen = ({ navigation }) => {
+
+    const { handleRegister, loading } = useAuth()
 
     const { control, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
@@ -30,7 +33,19 @@ const RegisterScreen = ({ navigation }) => {
     })
 
     const onSubmit = async (data) => {
+        try {
+            await handleRegister(data)
 
+            Alert.alert(
+                "Registero exitoso",
+                "Tu cuenta ha sido creada. Ahora puedes iniciar sesion"
+                [{ text: "OK", onPress: () => navigation.navigate("Login") }]
+            )
+        } catch (error) {
+            console.error(error)
+            const message = error.response?.data?.message || "Error al crear la cuenta"
+            Alert.alert("Error", message)
+        }
     }
 
     return (

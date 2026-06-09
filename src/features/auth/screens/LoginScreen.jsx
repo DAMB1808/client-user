@@ -14,10 +14,13 @@ import { useForm, Controller } from "react-hook-form"
 import { COLORS, SPACING, FONT_SIZE } from "../../../shared/constans/theme"
 import Input from "../../../shared/components/Input"
 import Button from "../../../shared/components/Button"
+import { useAuth } from "../hooks/useAuth"
 
 import kinalSportsLogo from "../../../../assets/kinal_sports.png"
 
 const LoginScreen = ({ navigation }) => {
+
+    const { handleLogin, loading } = useAuth();
 
     const { control, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
@@ -27,7 +30,12 @@ const LoginScreen = ({ navigation }) => {
     })
 
     const onSubmit = async (data) => {
-
+        try {
+            await handleLogin(data)
+        } catch (error) {
+            error.response?.data?.message || "Error al iniciar sesión"
+            Alert.alert("Error", message)
+        }
     }
 
     return (
